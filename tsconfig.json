@@ -1,0 +1,16 @@
+{
+  "extends": "@tsconfig/recommended/tsconfig.json",
+  "compilerOptions": {
+    "jsx": "react",
+    "allowJs": true,
+    "baseUrl": "./",
+    "paths": {
+      "src/*": ["src/*"],
+      "debounced/*": ["src/debounced/*"]
+    }
+  },
+  "include": ["./src",
+    "./src/dai-5"
+  ],
+  "exclude": ["node_modules"]
+}

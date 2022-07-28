@@ -1,0 +1,60 @@
+/* skew width rad*/
+.container {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.matrix2d {
+  width: 100px;
+  height: 100px;
+  background-color: #61dafb;
+  opacity: 0.5;
+  transform: matrix(0.5, 0.25 , 0.25, 2, 0, 0);
+  display: none;
+}
+
+.matrix3d {
+  position: relative;
+  perspective: 200px;
+  perspective-origin: top left;
+}
+
+.face {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+}
+
+.front {
+  background-color: blue;
+  transform: translateZ(50px);
+}
+
+.back {
+  background-color: red;
+  transform: translateZ(-50px);
+}
+
+.left {
+  background-color: purple;
+  transform: rotateX(90deg) translateZ(50px);
+}
+
+.right {
+  background-color: yellow;
+  transform: rotateX(-90deg) translateZ(50px);
+}
+
+.bottom {
+  background-color: black;
+  transform: rotateY(-90deg) translateZ(50px);
+}
+
+.top {
+  background-color: pink;
+  transform: rotateY(90deg) translateZ(50px);
+}
+
+

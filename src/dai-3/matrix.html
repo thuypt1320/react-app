@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!--
+    manifest.json provides metadata used when your web app is installed on a
+    user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+  -->
+  <style>
+    html, body {
+      width: 100%;
+      height: 100%;
+    }
+    .spinner {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: 5px solid lavender;
+      border-right-color: transparent;
+      border-top-color: transparent;
+      animation: spinnerAni 5s linear infinite;
+    }
+
+    .spinner-1 {
+      width: 40px;
+      height: 40px;
+      animation: spinnerAni 3s linear infinite;
+    }
+
+    .spinner-2 {
+      width: 30px;
+      height:30px;
+      animation: spinnerAni 5s linear infinite;
+    }
+
+    .fan {
+      border: 20px solid lavender;
+      border-right-color: transparent;
+      border-left-color: transparent;
+      width: 0;
+      height: 0;
+      border-radius: 50%;
+      animation: fanAni 2s linear infinite;
+      animation-play-state: running;
+    }
+
+    .fan:hover {
+      animation-play-state: paused;
+    }
+
+    @keyframes spinnerAni {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg)
+      }
+    }
+
+    @keyframes fanAni {
+      0% {
+        transform: rotate(0deg);
+      }
+      50% {
+        transform: rotate(60deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+  </style>
+  <title></title>
+</head>
+<body>
+<div class="container">
+    <div class="fan"></div>
+    <div class="spinner">
+      <div class="spinner spinner-1">
+        <div class="spinner spinner-2"></div>
+      </div>
+    </div>
+<!--  <div class="matrix2d"></div>-->
+    <div class="matrix3d">
+      <div class="face front"></div>
+      <div class="face back"></div>
+      <div class="face left"></div>
+      <div class="face right"></div>
+      <div class="face top"></div>
+      <div class="face bottom"></div>
+    </div>
+<!--  </div>-->
+</body>
+</html>

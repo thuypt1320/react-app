@@ -1,0 +1,57 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!--
+    manifest.json provides metadata used when your web app is installed on a
+    user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+  -->
+  <style>
+    .parent {
+      background-color: rgba(73, 131, 189, 0.99);
+      height: 60px;
+      width: 220px;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      margin-bottom: 10px;
+    }
+
+    .child {
+      background-color: #eaeaea;
+      height: 30px;
+      width: 180px;
+    }
+
+  </style>
+
+  <title></title>
+</head>
+<body>
+  <div class="container" prefix="container: container element">
+    <div class="parent">
+      <div class="child"></div>
+    </div>
+
+  </div>
+
+  <script type="text/javascript">
+    let container = document.querySelector(".container");
+    let parent = document.querySelector(".parent");
+    let child = document.querySelector(".child");
+
+    parent.addEventListener("mouseenter", (eparent) => {
+      child.addEventListener("mouseleave", () => {
+        child.innerHTML="leave mouse";
+        eparent.preventDefault()
+      })
+      child.innerHTML="enter"
+    })
+
+    container.addEventListener("click", () => {
+      child.innerHTML=container.prefix
+    })
+  </script>
+</body>
+</html>

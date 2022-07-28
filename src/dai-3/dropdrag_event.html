@@ -1,0 +1,95 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!--
+    manifest.json provides metadata used when your web app is installed on a
+    user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+  -->
+  <style>
+    .box {
+      background-color: rgba(73, 131, 189, 0.99);
+      height: 50px;
+      width: 200px;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      margin-bottom: 10px;
+    }
+
+    .toggle {
+      display: none;
+    }
+
+    .display {
+      padding: 10px
+    }
+
+    #draggable {
+      background-color: #eaeaea;
+      height: 30px;
+      width: 180px;
+    }
+
+    .dragover {
+      opacity: 0.5
+    }
+
+  </style>
+
+  <title></title>
+</head>
+<body>
+  <div class="container">
+    <div class="box">
+      <div id="draggable" draggable="true"></div>
+    </div>
+    <div class="box" id="scroll"></div>
+  </div>
+
+  <script type="text/javascript">
+    /**
+     * events: - dragstart - dragenter - dragleave
+     * - dragover (** prevent default to allow drop **)
+     * - drop
+     * */
+    let dragged;
+    // set dragged element
+    document.addEventListener("dragstart", event => {
+      dragged = event.target;
+    })
+
+    // opacity when enter element
+    document.addEventListener("dragenter", event => {
+      event.target.classList.add("dragover");
+    })
+
+    // prevent event to allow drop
+    document.addEventListener("dragover", event => {
+      event.preventDefault();
+    })
+
+    // remove opacity when leave element
+    document.addEventListener("dragleave", event => {
+      event.target.classList.remove("dragover");
+    })
+
+    // drop
+    document.addEventListener("drop", event => {
+      event.preventDefault();
+      if (event.target.classList.contains("box")) {
+        dragged.parentNode.removeChild(dragged);
+        event.target.appendChild(dragged);
+      }
+    })
+
+    document.getElementById("scroll").scroll({
+      top: 100,
+      left: 100,
+      behavior: 'smooth'
+    });
+
+  </script>
+</body>
+</html>

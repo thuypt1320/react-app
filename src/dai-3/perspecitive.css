@@ -1,0 +1,51 @@
+/*
+@: https://css-tricks.com/how-css-perspective-works/
+ size: translateZ - x2 - face - x2 - square - x2 - container
+
+ view: perspective - preserve-3d - rotate
+
+ top: rotateX(90deg)
+ left: rotateY(90deg)
+ bottom: rotateX(-90deg)
+ right: rotateY(-90deg)
+
+*/
+
+.container {
+  width: 400px;
+  height: 400px;
+  perspective: 400px;
+  perspective-origin: top right;
+}
+
+.square {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  width:200px;
+  height: 200px;
+  transform-style: preserve-3d;
+}
+
+.face {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  opacity: 0.25;
+}
+
+.front {
+  background-color: blue;
+  transform:translateZ(50px);
+}
+
+.top {
+  background-color: yellow;
+  transform: rotateX(90deg) translateZ(50px);
+}
+
+.left {
+  background-color: red;
+  transform: rotateY(90deg) translateZ(50px);
+}
+
