@@ -1,5 +1,5 @@
 import React from 'react';
-import './perspecitive.css';
+import 'src/pr-1/dai-3/perspecitive.css';
 
 export const Perspecitive = () => {
   return (

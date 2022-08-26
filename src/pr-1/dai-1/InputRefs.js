@@ -37,7 +37,6 @@ const InputRefs1 = (open) => {
   const ref1 = useRef(null);
   const ref2 = useRef(null);
   const ref3 = useRef(null);
-
   const handleRefresh = () => {
     setVal1('');
     setVal2('');

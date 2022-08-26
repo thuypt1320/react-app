@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useDebounce } from 'src/dai-5/hooks/useDebounce';
+import { useDebounce } from 'src/pr-1/dai-5/hooks/useDebounce';
 
 function InputWithDebouce() {
   const [value, setValue] = useState();

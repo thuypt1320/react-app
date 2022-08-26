@@ -1,5 +1,5 @@
 import React from 'react';
-import './matrix.css';
+import 'src/pr-1/dai-3/matrix.css';
 
 export const Matrix = () => {
   return(

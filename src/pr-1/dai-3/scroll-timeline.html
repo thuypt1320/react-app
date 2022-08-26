@@ -51,12 +51,11 @@
 </head>
 <body onload="draw();">
     <canvas id="canvas" width="150" height="150"></canvas>
-    <canvas id="canvas-1" width="150" height="150"></canvas>
+<!--    <canvas id="canvas-1" width="150" height="150"></canvas>-->
 <!--  <div id="progress"></div>-->
 <!--<div class="container" prefix="container: container element">-->
 <!--  <div class="parent">-->
 <!--  </div>-->
-
 </div>
 <script>
     const canvas = document.getElementById('canvas');
@@ -65,12 +64,28 @@
     if (canvas.getContext) {
       const ctx = canvas.getContext('2d');
 
-      ctx.beginPath();
-      ctx.moveTo(0, 0);
-      ctx.lineTo(100, 50);
-      ctx.lineTo(0, 100);
-      ctx.lineTo(0, 0)
-      ctx.stroke();
+	  const xRight =0;
+	  const yPosition =0
+      // ctx.beginPath();
+      // ctx.moveTo(0, 0);
+      // ctx.lineTo(100, 50);
+      // ctx.lineTo(0, 100);
+      // ctx.lineTo(0, 0)
+      // ctx.stroke();
+
+	    ctx.beginPath();
+	    ctx.moveTo(0,100)
+
+	    // ctx.bezierCurveTo(50,100,100,150,100,100);
+
+		// ctx.rect(0, 0,200,300);
+		ctx.ellipse(100,100, 0.5, 1, 1, 100, 200)
+
+		ctx.fill()
+	    ctx.strokeStyle = "black";
+	    ctx.lineWidth = 1;
+	    ctx.stroke();
+	    ctx.restore();
 
     }
 
