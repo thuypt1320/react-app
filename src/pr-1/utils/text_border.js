@@ -5,6 +5,10 @@ function textShadow(color, width) {
     [ 0, 1, 1 ],
     [ 1, 0, 1 ],
 
+    [ 1, 1, 0 ],
+    [ 0, 1, 0 ],
+    [ 1, 0, 0 ],
+
     [ -1, -1, 1 ],
     [ 0, -1, 1 ],
     [ -1, 0, 1 ],
@@ -19,3 +23,5 @@ function textShadow(color, width) {
     }).join(" ");
   }).join(` ${color}, \n`) + ` ${color}`;
 }
+
+console.log(textShadow("white", 3.20788));
