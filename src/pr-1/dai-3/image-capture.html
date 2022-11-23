@@ -45,13 +45,14 @@
   let dataTransfer = new DataTransfer();
 
   input.addEventListener("select", function (event) {
-    let string = event.target.value.substring(event.target.selectionStart, event.target.selectionEnd)
-    dataTransfer.setData("text", string)
+      let string = event.target.value.substring(event.target.selectionStart, event.target.selectionEnd)
+      console.log(string);
+      dataTransfer.setData("text", string);
   })
 
   paste.addEventListener("contextmenu", function(event) {
-    event.preventDefault()
     paste.setAttribute("value", dataTransfer.getData("text"))
+    event.preventDefault(); // to hidden context menu
   })
 
 </script>
