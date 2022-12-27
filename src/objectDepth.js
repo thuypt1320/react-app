@@ -1,4 +1,4 @@
-const checkFieldHasValue = (value, depth) => {
+const checkFieldHasValue = (value, depth = 1) => {
   const keys = Object.keys(value)
   if (depth === 1) {
     const filterKeys = keys.filter(item => !!value[item]);
@@ -9,13 +9,12 @@ const checkFieldHasValue = (value, depth) => {
   }
   const keys1 = keys.filter(key => typeof value[key] === "object" && !!value[key]);
   let value1 = {}
-  keys1.forEach(item => value1 = { ...value1, [item]: value[item] })
+  keys1.forEach(item => value1 = { ...value1, [item]: checkFieldHasValue(value[item]) })
 
   return checkFieldHasValue(value1, depth - 1)
 }
 
 // const x = checkFieldHasValue({ a: { b: { c: "text" } }, b: 0, c: {d: 1} }, 2)
-// console.log(x);
 
 
 const flattenObject = (value, depth) => {
@@ -34,6 +33,5 @@ const flattenObject = (value, depth) => {
   return {...value1, ...newValue}
 }
 
-const x = flattenObject({a: {b: {c: 1}}, d: {e: 1}, f: 1}, 3)
-
-console.log(x);
+// const x = flattenObject({a: {b: {c: 1}}, d: {e: {f: 1, e: {a: 1}}}, f: 1}, 5)
+// console.log(x);
